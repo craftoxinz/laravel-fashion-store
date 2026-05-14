@@ -1,3 +1,13 @@
+:root {
+    --ff: 'Inter';
+}
+
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--ff), sans-serif;
+}
+
+/* Override default bootstrap modal */
+.modal .form-control:focus {
+    border-color: #444;
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.15);
 }

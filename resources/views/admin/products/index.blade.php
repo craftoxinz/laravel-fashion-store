@@ -1,11 +1,16 @@
-<x-bootstrap.layouts.page>
-    <x-slot:pageTitle>Dashboard</x-slot:pageTitle>
+{{-- index.blade.php --}}
+
+<x-layouts.admin>
+    <x-slot:title>Halaman Produk</x-slot:title>
     <div>
         {{-- Navbar Start --}}
-        <x-bootstrap.navbar />
+
+        <x-navbar />
+
         {{-- Navbar End --}}
 
         {{-- Table Start --}}
+
         <div class="container mt-5">
             <div class="d-flex align-items-center justify-content-between">
                 <h3 class="fw-semibold mb-0">Tabel Produk</h3>
@@ -138,9 +143,11 @@
                 </div>
             </div>
         </div>
+
         {{-- Table End --}}
 
         {{-- Modal Create Start --}}
+
         <div class="modal fade" id="createProductsModal" tabindex="-1" aria-labelledby="createProductModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
@@ -180,17 +187,17 @@
                 </div>
             </div>
         </div>
+
         {{-- Modal Create End --}}
     </div>
 
     {{-- Inline Styles Start --}}
-    <x-slot:styles>
-        <style>
-            .modal .form-control:focus {
-                border-color: #444;
-                box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.15);
-            }
-        </style>
-    </x-slot:styles>
+
+    @pushOnce('styles')
+        <style></style>
+    @endPushOnce
+
     {{-- Inline Styles End --}}
-</x-bootstrap.layouts.page>
+</x-layouts.admin>
+
+{{-- index.blade.php --}}

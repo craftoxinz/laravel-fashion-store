@@ -11,9 +11,10 @@ class ProductController extends Controller
 {
     public function index(): View
     {
-        $products = Product::all();
+        /** @var \Illuminate\Database\Eloquent\Collection<int, \App\Models\Product> $products */
+        $products = Product::latest()->get();
 
-        return view('bootstrap.admin.products.index', compact('products'));
+        return view('admin.products.index', compact('products'));
     }
 
     public function store(Request $request): RedirectResponse
