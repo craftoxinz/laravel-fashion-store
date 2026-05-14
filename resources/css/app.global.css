@@ -24,22 +24,22 @@
     --font-secondary: 'Playfair Display', serif;
 
     /* Colors Variables */
-    --color-primary: #fdfdf5;
-    --color-secondary: #0a0a0a;
+    --color-primary: #0a0a0a;
+    --color-secondary: #fdfdf5;
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Essential for predictable layouts */
+    box-sizing: border-box;
 }
 
 body {
     min-height: 100vh;
     max-width: 100vw;
     overflow-x: hidden;
-    background: var(--color-primary);
-    color: var(--color-secondary);
+    background: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 html {

@@ -1,0 +1,36 @@
+/* resources/js/components/ui/section/Section.module.css */
+
+.section {
+    width: 100%;
+    position: relative;
+    padding: 0px 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.darkTheme {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.fullWidth {
+    width: 100%;
+    padding: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 0;
+    }
+
+    .container {
+        width: 92%;
+    }
+}
