@@ -1,7 +1,7 @@
 {{-- dashboard.blade.php --}}
 
 <x-layouts.admin>
-    <x-slot:title>Halaman Dashboard</x-slot:title>
+    <x-slot:title>Halaman Beranda</x-slot:title>
 
     {{-- Navbar Start --}}
 
