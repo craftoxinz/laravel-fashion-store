@@ -22,6 +22,13 @@
                                 Produk
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}"
+                                aria-current="{{ request()->routeIs('admin.categories.*') ? 'page' : false }}"
+                                href="{{ route('admin.categories.index') }}">
+                                Kategori
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     // Product routes
     Route::resource('products', ProductController::class)->only([
+        'index', 'store', 'update', 'destroy',
+    ]);
+
+    // Category routes
+    Route::resource('categories', CategoryController::class)->only([
         'index', 'store', 'update', 'destroy',
     ]);
 });
