@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -11,7 +12,7 @@ class ProductController extends Controller
 {
     public function index(): View
     {
-        /** @var \Illuminate\Database\Eloquent\Collection<int, \App\Models\Product> $products */
+        /** @var Collection<int, Product> $products */
         $products = Product::latest()->get();
 
         return view('admin.products.index', compact('products'));
