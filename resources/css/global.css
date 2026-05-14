@@ -19,6 +19,21 @@
 }
 
 :root {
+    /* Fonts Variables */
     --font-primary: 'Montserrat', sans-serif;
     --font-secondary: 'Playfair Display', serif;
+
+    /* Colors Variables */
+    --color-primary: #fdfdf5;
+    --color-secondary: #0a0a0a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--color-primary);
 }
