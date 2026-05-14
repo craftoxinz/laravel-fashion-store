@@ -1,15 +1,14 @@
 import { Head } from '@inertiajs/react';
-import Navbar from '@/components/reusable/Navbar';
-// import HeroSection from "@/Components/Hero/HeroSection";
+import AppLayout from '@/components/layout/AppLayout/AppLayout';
 
-export default function Home({ name }: { name: string }) {
+export default function Home() {
     return (
-        <>
-            {/* 1. SEO & Browser Tab Title */}
+        <AppLayout activePage="home">
             <Head title="Home" />
-            <Navbar activePage="home" />
-
-            <main>{/* <HeroSection /> */}</main>
-        </>
+            <section>
+                <h1>Hello World!</h1>
+                {/* Your HeroSection will go here next */}
+            </section>
+        </AppLayout>
     );
 }

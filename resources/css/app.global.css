@@ -31,9 +31,17 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Essential for predictable layouts */
+}
+
+body {
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+    background: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 html {
     scroll-behavior: smooth;
-    background: var(--color-primary);
 }

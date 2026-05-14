@@ -12,7 +12,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
             <div className={styles.logoWrapper}>
                 <Link href="/">
                     <img
-                        src="/images/logo.svg"
+                        src="/images/logo.png"
                         alt="GALFINC Logo"
                         className={styles.logoImage}
                     />
