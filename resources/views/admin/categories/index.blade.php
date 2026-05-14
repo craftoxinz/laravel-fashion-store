@@ -1,7 +1,7 @@
 {{-- index.blade.php --}}
 
 <x-layouts.admin>
-    <x-slot:title>Halaman Produk</x-slot:title>
+    <x-slot:title>Halaman Kategori</x-slot:title>
     <div>
         {{-- Navbar Start --}}
 
