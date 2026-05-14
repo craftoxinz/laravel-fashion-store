@@ -14,7 +14,7 @@
         <div class="container mt-5">
             <div class="d-flex align-items-center justify-content-between">
                 <h3 class="fw-semibold mb-0">Tabel Produk</h3>
-                <button class="btn btn-dark fw-medium px-3" type="button" data-bs-toggle="modal" data-bs-target="#createProductsModal">Tambah</button>
+                <button class="btn btn-dark fw-medium px-3" type="button" data-bs-toggle="modal" data-bs-target="#createProductModal">Tambah</button>
             </div>
 
             <div class="card border-0 shadow mt-4">
@@ -148,7 +148,7 @@
 
         {{-- Modal Create Start --}}
 
-        <div class="modal fade" id="createProductsModal" tabindex="-1" aria-labelledby="createProductModalLabel" aria-hidden="true">
+        <div class="modal fade" id="createProductModal" tabindex="-1" aria-labelledby="createProductModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header bg-dark text-white">
