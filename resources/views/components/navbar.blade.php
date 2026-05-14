@@ -29,6 +29,13 @@
                                 Kategori
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('admin.customers.*') ? 'active' : '' }}"
+                                aria-current="{{ request()->routeIs('admin.customers.*') ? 'page' : false }}"
+                                href="{{ route('admin.customers.index') }}">
+                                Pelanggan
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

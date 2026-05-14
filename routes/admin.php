@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     // Category routes
     Route::resource('categories', CategoryController::class)->only([
+        'index', 'store', 'update', 'destroy',
+    ]);
+
+    // Customer routes
+    Route::resource('customers', CustomerController::class)->only([
         'index', 'store', 'update', 'destroy',
     ]);
 });
