@@ -59,6 +59,24 @@
                                 Supplier
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link {{ request()->routeIs('admin.promotions.*') ? 'active' : '' }}"
+                                aria-current="{{ request()->routeIs('admin.promotions.*') ? 'page' : false }}"
+                                href="{{ route('admin.promotions.index') }}"
+                            >
+                                Promosi
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link {{ request()->routeIs('admin.payments.*') ? 'active' : '' }}"
+                                aria-current="{{ request()->routeIs('admin.payments.*') ? 'page' : false }}"
+                                href="{{ route('admin.payments.index') }}"
+                            >
+                                Pembayaran
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

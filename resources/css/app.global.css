@@ -1,0 +1,47 @@
+/* Montserrat font */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-VariableFont_wght.woff2')
+        format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Playfair Display font */
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/PlayfairDisplay-VariableFont_wght.woff2')
+        format('woff2-variations');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* Fonts Variables */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+
+    /* Colors Variables */
+    --color-primary: #0a0a0a;
+    --color-secondary: #fdfdf5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+    background: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+html {
+    scroll-behavior: smooth;
+}

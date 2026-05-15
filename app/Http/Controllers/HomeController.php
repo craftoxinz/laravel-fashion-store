@@ -11,4 +11,10 @@ class HomeController extends Controller
     {
         return Inertia::render('home', ['name' => 'Randie']);
     }
+
+    public function shop()
+    {
+        return Inertia::render('Shop'); 
+    }
 }
+

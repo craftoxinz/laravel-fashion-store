@@ -1,0 +1,129 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.pageTitle {
+    font-family: var(--font-primary);
+    font-weight: 800;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.sortSelect {
+    border: none;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    cursor: pointer;
+    background: transparent;
+}
+
+.shopLayout {
+    display: flex;
+    gap: 60px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 180px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 120px; /* Anchors it while scrolling */
+}
+
+.filterLabel {
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.filterList {
+    list-style: none;
+    padding: 0;
+}
+
+.filterBtn {
+    background: none;
+    border: none;
+    display: block;
+    padding: 8px 0;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    cursor: pointer;
+    text-align: left;
+    transition: opacity 0.3s;
+}
+
+.activeFilter {
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+/* GRID */
+.mainContent {
+    flex-grow: 1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 20px;
+}
+
+.mobileFilterBar {
+    display: none;
+}
+
+/* RESPONSIVE PIVOT */
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .shopLayout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .mobileFilterBar {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .mobileFilterToggle {
+        width: 100%;
+        padding: 15px;
+        background: var(--color-secondary);
+        color: var(--color-primary);
+        border: none;
+        font-family: var(--font-primary);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

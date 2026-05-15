@@ -7,6 +7,9 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\SizeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +48,22 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     // Supplier routes
     Route::resource('suppliers', SupplierController::class)->only([
+        'index', 'store', 'update', 'destroy',
+    ]);
+
+    // Promotion routes
+    Route::resource('promotions', PromotionController::class)->only([
+        'index', 'store', 'update', 'destroy',
+    ]);
+
+    // Size routes
+    Route::resource('sizes', SizeController::class)->only([
+        'index', 'store', 'update', 'destroy',
+    ]);
+
+
+    // Payment routes
+    Route::resource('payments', PaymentController::class)->only([
         'index', 'store', 'update', 'destroy',
     ]);
 });
