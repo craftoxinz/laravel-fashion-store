@@ -14,7 +14,7 @@ class HomeController extends Controller
 
     public function shop()
     {
-        return Inertia::render('Shop'); 
+        return Inertia::render('shop'); 
     }
 }
 
