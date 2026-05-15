@@ -18,6 +18,9 @@ return new class extends Migration
             $table->decimal('price', 12, 0);
             $table->integer('stock');
             $table->string('sku')->unique();
+            $table->string('image')->nullable(); // path buat foto produk
+            $table->string('category')->default('Uncategorized');
+            $table->boolean('is_featured')->default(false);//buat nmapilin product di banner homepage
             $table->timestamps();
         });
     }

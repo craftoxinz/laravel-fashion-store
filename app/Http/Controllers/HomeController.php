@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -14,7 +15,10 @@ class HomeController extends Controller
 
     public function shop()
     {
-        return Inertia::render('shop'); 
+        //fetching products dari database
+        $products = Product::all();
+
+        return Inertia::render('shop', ['products' => $products]); 
     }
 }
 

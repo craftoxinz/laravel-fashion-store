@@ -1,14 +1,33 @@
+// resources/js/components/ui/productcard/ProductCard.tsx
+
 import React from 'react';
 import styles from './ProductCard.module.css';
 
 interface Product {
     id: number;
     name: string;
-    price: string;
+    price: number | string;
     image: string;
 }
 
-export default function ProductCard({ product }: { product: Product }) {
+interface ProductCardProps {
+    product: Product;
+}
+
+export default function ProductCard({ product }: ProductCardProps) {
+    const formatCurrency = (value: number | string) => {
+        const numericValue =
+            typeof value === 'string' ? parseFloat(value) : value;
+
+        return new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+            minimumFractionDigits: 0, // Biker brands usually don't need ,00 cents
+        })
+            .format(numericValue)
+            .replace('IDR', 'Rp');
+    };
+
     return (
         <div className={styles.productCard}>
             <div className={styles.imageWrapper}>
@@ -20,7 +39,9 @@ export default function ProductCard({ product }: { product: Product }) {
             </div>
             <div className={styles.productDetails}>
                 <h3 className={styles.productName}>{product.name}</h3>
-                <p className={styles.productPrice}>{product.price}</p>
+                <p className={styles.productPrice}>
+                    {formatCurrency(product.price)}
+                </p>
             </div>
         </div>
     );

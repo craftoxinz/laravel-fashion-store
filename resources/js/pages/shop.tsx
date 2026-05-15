@@ -1,71 +1,30 @@
+// resources/js/pages/shop.tsx
+
 import React, { useState } from 'react';
 import AppLayout from '../components/layout/AppLayout/AppLayout';
 import Section from '../components/ui/section/Section';
 import ProductCard from '../components/ui/productcard/ProductCard';
 import styles from './shop.module.css';
 
-// Placeholder array
-const allProducts = [
-    {
-        id: 1,
-        name: 'Collar Biker Hendrix',
-        price: 'Rp 1.200.000,00',
-        image: '/images/products/j1.jpg',
-        category: 'Jackets',
-    },
-    {
-        id: 2,
-        name: 'Essential Tee',
-        price: 'Rp 350.000,00',
-        image: '/images/products/t1.jpg',
-        category: 'Shirts',
-    },
-    {
-        id: 3,
-        name: 'Biker Cargo',
-        price: 'Rp 850.000,00',
-        image: '/images/products/p1.jpg',
-        category: 'Pants',
-    },
-    {
-        id: 4,
-        name: 'Silver Ring',
-        price: 'Rp 450.000,00',
-        image: '/images/products/a1.jpg',
-        category: 'Accessories',
-    },
-    {
-        id: 5,
-        name: 'Leather Boots',
-        price: 'Rp 2.100.000,00',
-        image: '/images/products/f1.jpg',
-        category: 'Footwear',
-    },
-    {
-        id: 6,
-        name: 'Flannel Shirt',
-        price: 'Rp 550.000,00',
-        image: '/images/products/s1.jpg',
-        category: 'Shirts',
-    },
-    {
-        id: 7,
-        name: 'Leather Jacket',
-        price: 'Rp 3.500.000,00',
-        image: '/images/products/j2.jpg',
-        category: 'Jackets',
-    },
-    {
-        id: 8,
-        name: 'Ripped Denim',
-        price: 'Rp 950.000,00',
-        image: '/images/products/p2.jpg',
-        category: 'Pants',
-    },
-];
+// Define the shape of the product coming from Laravel Eloquent
+interface Product {
+    id: number;
+    name: string;
+    price: number; // Laravel sends decimals/integers as numbers or strings
+    image: string;
+    category?: string;
+    description?: string;
+}
 
-export default function Shop() {
+interface ShopProps {
+    products: Product[];
+}
+
+export default function Shop({ products }: ShopProps) {
     const [activeCategory, setActiveCategory] = useState('All');
+
+    // Logic for filtering (Optional, but helps prevent errors if products is undefined)
+    const displayProducts = products || [];
 
     return (
         <AppLayout activePage="shop">
@@ -84,7 +43,6 @@ export default function Shop() {
 
             <Section id="shop-content" noPadding>
                 <div className={styles.shopLayout}>
-                    {/* SIDEBAR - Desktop Only */}
                     <aside className={styles.sidebar}>
                         <div className={styles.filterGroup}>
                             <h3 className={styles.filterLabel}>Categories</h3>
@@ -111,23 +69,25 @@ export default function Shop() {
                         </div>
                     </aside>
 
-                    {/* MOBILE FILTER BAR - Visible only on Mobile */}
                     <div className={styles.mobileFilterBar}>
                         <button className={styles.mobileFilterToggle}>
                             Filter & Category
                         </button>
                     </div>
 
-                    {/* PRODUCT GRID */}
-                    <div className={styles.mainContent}>
-                        <div className={styles.grid}>
-                            {allProducts.map((product) => (
+                    <div className={styles.grid}>
+                        {displayProducts.length > 0 ? (
+                            displayProducts.map((product) => (
                                 <ProductCard
                                     key={product.id}
                                     product={product}
                                 />
-                            ))}
-                        </div>
+                            ))
+                        ) : (
+                            <p className={styles.emptyMessage}>
+                                No products found in the database.
+                            </p>
+                        )}
                     </div>
                 </div>
             </Section>
