@@ -1,9 +1,9 @@
-<x-bootstrap.layouts.page>
-    <x-slot:pageTitle>Halaman Order</x-slot:pageTitle>
+<x-layouts.admin>
+    <x-slot:title>Halaman Order</x-slot:title>
 
     <div>
         {{-- Navbar Start --}}
-        <x-bootstrap.navbar />
+        <x-navbar />
         {{-- Navbar End --}}
 
         {{-- Table Start --}}
@@ -422,4 +422,4 @@
         </style>
     </x-slot:styles>
     {{-- Inline Styles End --}}
-</x-bootstrap.layouts.page>
+</x-layouts.admin>

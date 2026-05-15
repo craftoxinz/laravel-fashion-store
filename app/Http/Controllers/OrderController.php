@@ -13,7 +13,7 @@ class OrderController extends Controller
     {
         $orders = Order::all();
 
-        return view('bootstrap.admin.orders.index', compact('orders'));
+        return view('admin.orders.index', compact('orders'));
     }
 
     public function store(Request $request): RedirectResponse

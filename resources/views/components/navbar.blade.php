@@ -36,6 +36,29 @@
                                 Pelanggan
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('admin.orders.*') ? 'active' : '' }}"
+                                aria-current="{{ request()->routeIs('admin.orders.*') ? 'page' : false }}"
+                                href="{{ route('admin.orders.index') }}">
+                                Order
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('admin.employees.*') ? 'active' : '' }}"
+                                aria-current="{{ request()->routeIs('admin.employees.*') ? 'page' : false }}"
+                                href="{{ route('admin.employees.index') }}">
+                                Pegawai
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link {{ request()->routeIs('admin.suppliers.*') ? 'active' : '' }}"
+                                aria-current="{{ request()->routeIs('admin.suppliers.*') ? 'page' : false }}"
+                                href="{{ route('admin.suppliers.index') }}"
+                            >
+                                Supplier
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

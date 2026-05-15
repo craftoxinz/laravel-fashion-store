@@ -13,7 +13,7 @@ class EmployeeController extends Controller
     {
         $employees = Employee::all();
 
-        return view('bootstrap.admin.employees.index', compact('employees'));
+        return view('admin.employees.index', compact('employees'));
     }
 
     public function store(Request $request): RedirectResponse

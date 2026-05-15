@@ -14,7 +14,7 @@ class SupplierController extends Controller
     {
         $suppliers = Supplier::all();
 
-        return view('bootstrap.admin.suppliers.index', compact('suppliers'));
+        return view('admin.suppliers.index', compact('suppliers'));
     }
 
     public function store(Request $request): RedirectResponse

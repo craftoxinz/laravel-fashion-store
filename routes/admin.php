@@ -3,7 +3,10 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +30,21 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     // Customer routes
     Route::resource('customers', CustomerController::class)->only([
+        'index', 'store', 'update', 'destroy',
+    ]);
+
+    // Order routes
+    Route::resource('orders', OrderController::class)->only([
+        'index', 'store', 'update', 'destroy',
+    ]);
+
+    // Employee routes
+    Route::resource('employees', EmployeeController::class)->only([
+        'index', 'store', 'update', 'destroy',
+    ]);
+
+    // Supplier routes
+    Route::resource('suppliers', SupplierController::class)->only([
         'index', 'store', 'update', 'destroy',
     ]);
 });
