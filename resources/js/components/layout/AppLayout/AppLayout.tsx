@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 import styles from './AppLayout.module.css';
 
 interface LayoutProps {
@@ -15,6 +16,8 @@ export default function AppLayout({
             <Navbar activePage={activePage} />
 
             <main className={styles.mainContent}>{children}</main>
+
+            <Footer />
         </div>
     );
 }
