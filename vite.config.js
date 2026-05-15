@@ -15,7 +15,7 @@ export default defineConfig({
                 }),
             ],
         }),
-        inertia(),
+        // inertia(),
         react(),
     ],
     server: {

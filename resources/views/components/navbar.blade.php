@@ -77,6 +77,15 @@
                                 Pembayaran
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link {{ request()->routeIs('admin.sizes.*') ? 'active' : '' }}"
+                                aria-current="{{ request()->routeIs('admin.sizes.*') ? 'page' : false }}"
+                                href="{{ route('admin.sizes.index') }}"
+                            >
+                                Ukuran
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
