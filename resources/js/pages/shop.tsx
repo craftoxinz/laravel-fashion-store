@@ -4,11 +4,11 @@ import Section from '../components/ui/section/Section';
 import ProductCard from '../components/ui/productcard/ProductCard';
 import styles from './shop.module.css';
 
-// Mock data - eventually this comes from your backend friend
+// Placeholder array
 const allProducts = [
     {
         id: 1,
-        name: 'Raw Denim Jacket',
+        name: 'Collar Biker Hendrix',
         price: 'Rp 1.200.000,00',
         image: '/images/products/j1.jpg',
         category: 'Jackets',
