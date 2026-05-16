@@ -6,11 +6,10 @@ import Section from '../components/ui/section/Section';
 import ProductCard from '../components/ui/productcard/ProductCard';
 import styles from './shop.module.css';
 
-// Define the shape of the product coming from Laravel Eloquent
 interface Product {
     id: number;
     name: string;
-    price: number; // Laravel sends decimals/integers as numbers or strings
+    price: number;
     image: string;
     category?: string;
     description?: string;
@@ -23,7 +22,7 @@ interface ShopProps {
 export default function Shop({ products }: ShopProps) {
     const [activeCategory, setActiveCategory] = useState('All');
 
-    // Logic for filtering (Optional, but helps prevent errors if products is undefined)
+    // Logic buat filtering (opsional, tapi bisa mencegah error kalau products ksong)
     const displayProducts = products || [];
 
     return (
@@ -85,7 +84,7 @@ export default function Shop({ products }: ShopProps) {
                             ))
                         ) : (
                             <p className={styles.emptyMessage}>
-                                No products found in the database.
+                                No products found.
                             </p>
                         )}
                     </div>

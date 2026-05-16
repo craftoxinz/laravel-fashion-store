@@ -1,5 +1,3 @@
-// resources/js/components/ui/productcard/ProductCard.tsx
-
 import React from 'react';
 import styles from './ProductCard.module.css';
 
@@ -8,6 +6,8 @@ interface Product {
     name: string;
     price: number | string;
     image: string;
+    category?: string;
+    description?: string;
 }
 
 interface ProductCardProps {
@@ -22,7 +22,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         return new Intl.NumberFormat('id-ID', {
             style: 'currency',
             currency: 'IDR',
-            minimumFractionDigits: 0, // Biker brands usually don't need ,00 cents
+            minimumFractionDigits: 0,
         })
             .format(numericValue)
             .replace('IDR', 'Rp');

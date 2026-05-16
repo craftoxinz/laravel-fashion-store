@@ -32,7 +32,7 @@
     font-family: var(--font-primary);
     font-size: 1rem;
     font-weight: 600;
-    color: var(--color-secondary);
+    color: var(--color-primary);
     margin-bottom: 4px;
     text-transform: capitalize;
 }

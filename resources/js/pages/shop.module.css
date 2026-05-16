@@ -84,7 +84,13 @@
     display: none;
 }
 
-/* RESPONSIVE PIVOT */
+.emptyMessage {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #999;
+}
+
 @media (max-width: 1200px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
